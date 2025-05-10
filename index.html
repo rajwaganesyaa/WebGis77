@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WebGIS Kota Bandung</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easybutton.css">
+        <link href='https://api.mapbox.com/mapbox.js/plugins/leafletfullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+        <link rel="stylesheet" href="https://balladaniel.github.io/leaflet-dataclassification/leafletdataclassification.css" />
+    
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+                integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+        <script src="https://api.mapbox.com/mapbox.js/plugins/leafletfullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"
+                charset="utf-8"></script>
+        <script src="https://balladaniel.github.io/leaflet-dataclassification/leafletdataclassification.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        
+        <!-- Leaflet CSS -->
+         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+         
+         <!-- Leaflet Fullscreen Plugin CSS -->
+          <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen/Control.FullScreen.css" />
+          
+          <!-- Leaflet Locate Control CSS -->
+           <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+    </head>    
+<body>
+<header id="navbar">
+    <div class="container">
+        <div class="logo">
+            <img src="asset/KotaBandung.png" alt="Logo" width="100">
+            <h1>WebGIS Kota Bandung</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero-section">Home</a></li>
+                <li><a href="#map-section">Map</a></li>
+                <li><a href="#data-section">Data</a></li>
+                <li><a href="#author-section">Author</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div id="hero-section" class="hero-section">
+    <div class="overlay"></div>
+    <video autoplay muted loop>
+        <source src="asset/VideoBandung.mp4">
+    </video>
+    <div class="intro">
+        <div class="title-container">
+            <h1>WebGIS Basis Data Spasial Kota Bandung</h1>
+            <p>Halaman untuk Melakukan Eksplorasi Basis Data Spasial di Kota Bandung</p>
+        </div>
+    </div>
+</div>
+<div id="map-section">
+    <h2>Jelajahi WebGIS Basis Data Spasial Kota Bandung</h2>
+    <div id="map">
+    <!-- akan muncul peta disini -->
+    </div>
+</div>
+<div id="data-section">
+    <h2>Data Tersedia</h2>
+    <div class="container">
+        <div class="column">
+            <div class="data-item">
+                <div class="data-icon">
+                    <img src="asset/jembatan_pt.geojson" alt="Lokasi Geografi">
+                </div>
+                <div class="description">
+                    <h3>Lokasi Geografi</h3>
+                    <p>Bandung adalah kota yang terletak di Provinsi Jawa Barat, Indonesia, pada koordinat sekitar 6°55′ LS dan 107°36′ BT.  
+                        Kota ini berada di dataran tinggi dengan ketinggian sekitar 768 meter di atas permukaan laut dan dikelilingi oleh pegunungan, sehingga memiliki iklim sejuk. </p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="data-item">
+                <div class="data-icon">
+                    <img src="asset/Makanan.jpeg"    alt="Makanan">
+                </div>
+                <div class="description">
+                    <h3>Makanan</h3>
+                    <p>Bandung dikenal sebagai surga kuliner dengan beragam makanan enak yang menggoda. Mulai dari batagor yang gurih, seblak pedas beraroma kencur, hingga surabi manis nan lembut, 
+                        setiap sudut kota ini menawarkan cita rasa khas yang sulit dilupakan. Dengan suasana sejuk dan pilihan kuliner yang kreatif, Bandung selalu berhasil memanjakan lidah para pecinta makanan.</p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="data-item">
+                <div class="data-icon">
+                    <img src="asset/SumurResapan.jpeg" alt="SumurResapan">
+                </div>
+                <div class="description">
+                    <h3>Sumur Resapan</h3>
+                    <p>Kota Bandung aktif membangun sumur resapan untuk mengatasi masalah banjir dan menjaga ketersediaan air tanah. 
+                        Hingga saat ini, ribuan sumur resapan telah dibuat di berbagai wilayah, terutama di daerah rawan genangan. 
+                        Program ini terus didorong oleh pemerintah dan masyarakat untuk memperbaiki sistem drainase alami di tengah urbanisasi yang pesat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="data-item">
+                <div class="data-icon">
+                    <img src="asset/Kependudukan.png" alt="Kependudukan">
+                </div>
+                <div class="description">
+                    <h3>Kependudukan</h3>
+                    <p>​Pada tahun 2024, jumlah penduduk Kota Bandung mencapai sekitar 2,58 juta jiwa, dengan laju pertumbuhan tahunan rata-rata sebesar 
+                        0,57% selama lima tahun terakhir . Sebagian besar penduduknya berada dalam kelompok usia produktif, dengan sekitar 22% 
+                        merupakan anak-anak berusia 0–14 tahun . Sebagai kota terbesar di bagian selatan Pulau Jawa, 
+                        Bandung memiliki kepadatan penduduk yang tinggi, menjadikannya salah satu kota terpadat di Indonesia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="author-section">
+    <div class="author-content">
+        <h2>Tentang Pembuat</h2>
+        <img src="asset/Rajwa.JPG" alt="Profile Picture" class="profile-picture">
+        <div class="author-name">
+            <h3>Rajwa Ganesya Athallah</h3>
+        </div>
+        <p>Mahasiswa yang saat ini sedang menempuh pendidikan di Universitas Pendidikan Indonesia,
+         mengambil jurusan Sains Informasi Geografi. 
+         Website ini dibuat untuk mengenalkan salah satu pembelajaran di Sains Informasi Geografi mengenai web berbasis GIS.</p>
+        </p>
+    </div>
+</div>
+<div id="footer">
+    <div class="footer-content">
+    <h3>Hubungi Saya</h3>
+    <p>Email: rajwaganesyaa@upi.edu</p>
+    <p>Phone: +6287885427854</p>
+    </div>
+    </div>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<!-- Leaflet Plugin JS -->
+<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+<script src="https://balladaniel.github.io/leaflet-dataclassification/leaflet-dataclassification.js"></script>
+
+<!-- jQuery untuk AJAX requests -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Script utama -->
+<script src="js/script.js"></script>
+</body>
+</html>
